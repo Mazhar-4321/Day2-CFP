@@ -31,4 +31,15 @@ function sayName(name) {
 }
 
 // calling the function after 2 seconds
+function greet1(){
+    console.log('Hello world');
+}
 setTimeout(greet, 2000, 'John', sayName);
+setTimeout(greet1, 2000);
+sayName('John');
+// example 3
+function oddOrEven(number,callback){
+    const result=number%2==0?'Even':'Odd';
+    callback(number,result)
+}
+oddOrEven(25,(number,result)=>console.log(number+"is"+result))
