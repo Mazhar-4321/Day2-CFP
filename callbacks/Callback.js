@@ -64,3 +64,16 @@ callback("prime")
   }
 }
 generateRandomNumber(checkIfNumberIsPrime)
+// example 5
+const array1=[1,2,3,4]
+function compute(num1,num2){
+    return num1+num2;
+}
+function sumOfArray(array1,callback){
+    let initialValue=0;
+    for(let i=0;i<array1.length;i++){
+        initialValue=callback(initialValue,array1[i])
+    }
+    return initialValue;
+}
+console.log(sumOfArray(array1,compute));
