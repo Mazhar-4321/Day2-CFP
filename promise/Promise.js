@@ -1,4 +1,5 @@
 const DAILY_WAGE = 20
+let arrived=true;
 const user = [{
     "name": "Ali",
     "id": 1,
@@ -76,3 +77,12 @@ const getUserDetails = (userId) => {
     })
 }
 getOtp(Math.floor(Math.random() * 100)).then(result => { console.log(result); getUserDetails(result) }).then(result => console.log(result)).catch(err => console.log("err", err))
+//example 5
+const ride=new Promise((resolve,reject)=>{
+    if(arrived){
+        resolve('driver arrived');
+    }else{
+        reject('driver cancellled the ride');
+    }
+})
+ride.then(result=>console.log(result)).catch(err=>console.log(err));
