@@ -43,3 +43,24 @@ function oddOrEven(number,callback){
     callback(number,result)
 }
 oddOrEven(25,(number,result)=>console.log(number+"is"+result))
+// example 4
+function printResult(result){
+    console.log(result)
+}
+function generateRandomNumber(callback){
+callback(Math.floor(Math.random()*100),printResult)
+}
+function checkIfNumberIsPrime(number,callback){
+    let factors=0;
+  for(let i=1;i<=number;i++){
+if(number%i==0){
+    factors++;
+}
+  }
+  if(factors==0){
+callback("prime")
+  }else{
+    callback("composite")
+  }
+}
+generateRandomNumber(checkIfNumberIsPrime)
